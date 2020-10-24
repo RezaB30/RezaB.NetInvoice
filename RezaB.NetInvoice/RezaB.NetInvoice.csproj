@@ -1,0 +1,477 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{600CD969-015A-4308-8DA8-6272DAA88350}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>RezaB.NetInvoice</RootNamespace>
+    <AssemblyName>RezaB.NetInvoice</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+	<PackageDescription>NetInvoice Service Core.</PackageDescription>
+    <RepositoryUrl>https://github.com/masteriss/RezaB.NetInvoice</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccAuxPath>
+    </SccAuxPath>
+    <SccProvider>
+    </SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Enums\CurrencyAttributes.cs" />
+    <Compile Include="Enums\CurrencyCodes.cs" />
+    <Compile Include="Enums\DurationAttributes.cs" />
+    <Compile Include="Enums\IdentificationAttributes.cs" />
+    <Compile Include="Enums\InvoiceScenarios.cs" />
+    <Compile Include="Enums\InvoiceTypeCodes.cs" />
+    <Compile Include="Enums\PaymentChannelCodes.cs" />
+    <Compile Include="Enums\PaymentMeansCodes.cs" />
+    <Compile Include="Enums\SendingTypes.cs" />
+    <Compile Include="Enums\TaxTypeCodes.cs" />
+    <Compile Include="Enums\UnitCodes.cs" />
+    <Compile Include="Invoice\Address.cs" />
+    <Compile Include="Invoice\AllowanceCharge.cs" />
+    <Compile Include="Invoice\AttributeValuePair.cs" />
+    <Compile Include="Invoice\CommunicationChannels.cs" />
+    <Compile Include="Invoice\CurrencyAmountPair.cs" />
+    <Compile Include="Invoice\FirstNameFamilyNamePair.cs" />
+    <Compile Include="Invoice\Invoice.cs" />
+    <Compile Include="Invoice\InvoicedQuantity.cs" />
+    <Compile Include="Invoice\InvoiceInfo.cs" />
+    <Compile Include="Invoice\InvoiceLines.cs" />
+    <Compile Include="Invoice\InvoicePriod.cs" />
+    <Compile Include="Invoice\Invoices.cs" />
+    <Compile Include="Invoice\InvoiceTotals.cs" />
+    <Compile Include="Invoice\Item.cs" />
+    <Compile Include="Invoice\PaymentMeans.cs" />
+    <Compile Include="Invoice\PaymentTerms.cs" />
+    <Compile Include="Invoice\ReceipentInfo.cs" />
+    <Compile Include="Invoice\TaxCategory.cs" />
+    <Compile Include="Invoice\TaxSubTotal.cs" />
+    <Compile Include="Invoice\TaxTotal.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Service References\NetInvoiceTestService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\NetInvoiceTestService\IntegrationService.wsdl" />
+    <None Include="Service References\NetInvoiceTestService\RezaB.NetInvoice.NetInvoiceTestService.AcceptInvoiceResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\NetInvoiceTestService\RezaB.NetInvoice.NetInvoiceTestService.ApplicationResponsePackResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\NetInvoiceTestService\RezaB.NetInvoice.NetInvoiceTestService.ApplicationResponseResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\NetInvoiceTestService\RezaB.NetInvoice.NetInvoiceTestService.CancelEArchiveInvoiceResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\NetInvoiceTestService\RezaB.NetInvoice.NetInvoiceTestService.CancelEArchiveInvoiceStringDateAndAmountResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\NetInvoiceTestService\RezaB.NetInvoice.NetInvoiceTestService.CancelEArchiveInvoiceStringDateResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\NetInvoiceTestService\RezaB.NetInvoice.NetInvoiceTestService.CancelInvoiceNumberResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\NetInvoiceTestService\RezaB.NetInvoice.NetInvoiceTestService.CancelInvoiceNumberResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\NetInvoiceTestService\RezaB.NetInvoice.NetInvoiceTestService.CancelInvoiceResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\NetInvoiceTestService\RezaB.NetInvoice.NetInvoiceTestService.CheckCustomerTaxIdbyDateResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\NetInvoiceTestService\RezaB.NetInvoice.NetInvoiceTestService.CheckCustomerTaxIdResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\NetInvoiceTestService\RezaB.NetInvoice.NetInvoiceTestService.CheckEArchiveInvoiceStateResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\NetInvoiceTestService\RezaB.NetInvoice.NetInvoiceTestService.CheckEArchiveReportStateResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\NetInvoiceTestService\RezaB.NetInvoice.NetInvoiceTestService.CheckEnvelopeStateResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\NetInvoiceTestService\RezaB.NetInvoice.NetInvoiceTestService.CheckGibStatusResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\NetInvoiceTestService\RezaB.NetInvoice.NetInvoiceTestService.CheckInvoiceStateResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\NetInvoiceTestService\RezaB.NetInvoice.NetInvoiceTestService.CheckInvoiceStateWithReconciliationIDResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\NetInvoiceTestService\RezaB.NetInvoice.NetInvoiceTestService.CheckTaxIdListFromExcelFileResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\NetInvoiceTestService\RezaB.NetInvoice.NetInvoiceTestService.CorporateTemplateResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\NetInvoiceTestService\RezaB.NetInvoice.NetInvoiceTestService.CustomerInfoResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\NetInvoiceTestService\RezaB.NetInvoice.NetInvoiceTestService.DBJobProcessResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\NetInvoiceTestService\RezaB.NetInvoice.NetInvoiceTestService.DeleteEArchiveInvoiceResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\NetInvoiceTestService\RezaB.NetInvoice.NetInvoiceTestService.DeleteEArchiveReportResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\NetInvoiceTestService\RezaB.NetInvoice.NetInvoiceTestService.EArchiveInvoiceStateResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\NetInvoiceTestService\RezaB.NetInvoice.NetInvoiceTestService.eArchiveReconciliationPackResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\NetInvoiceTestService\RezaB.NetInvoice.NetInvoiceTestService.EArchiveReportPackResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\NetInvoiceTestService\RezaB.NetInvoice.NetInvoiceTestService.EArchiveReportResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\NetInvoiceTestService\RezaB.NetInvoice.NetInvoiceTestService.EArchiveReportStateResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\NetInvoiceTestService\RezaB.NetInvoice.NetInvoiceTestService.EArchiveStateResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\NetInvoiceTestService\RezaB.NetInvoice.NetInvoiceTestService.EInvoiceCustomerFullListResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\NetInvoiceTestService\RezaB.NetInvoice.NetInvoiceTestService.EInvoiceCustomerListResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\NetInvoiceTestService\RezaB.NetInvoice.NetInvoiceTestService.EInvoiceCustomerListUpdateResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\NetInvoiceTestService\RezaB.NetInvoice.NetInvoiceTestService.EnvelopeStateResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\NetInvoiceTestService\RezaB.NetInvoice.NetInvoiceTestService.GetAvailableApplicationResponsesResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\NetInvoiceTestService\RezaB.NetInvoice.NetInvoiceTestService.GetAvailableCompletedInvoicesResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\NetInvoiceTestService\RezaB.NetInvoice.NetInvoiceTestService.GetAvailableInvoiceReturnStatusResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\NetInvoiceTestService\RezaB.NetInvoice.NetInvoiceTestService.GetAvailableInvoicesByDateResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\NetInvoiceTestService\RezaB.NetInvoice.NetInvoiceTestService.GetAvailableInvoicesResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\NetInvoiceTestService\RezaB.NetInvoice.NetInvoiceTestService.GetAvailableInvoicesWithDateResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\NetInvoiceTestService\RezaB.NetInvoice.NetInvoiceTestService.GetAvailableSentInvoicesByDateResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\NetInvoiceTestService\RezaB.NetInvoice.NetInvoiceTestService.GetAvailableSentInvoicesByIssueDateResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\NetInvoiceTestService\RezaB.NetInvoice.NetInvoiceTestService.GetCustomerDifferenceBase64XmlResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\NetInvoiceTestService\RezaB.NetInvoice.NetInvoiceTestService.GetCustomerDifferenceXmlResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\NetInvoiceTestService\RezaB.NetInvoice.NetInvoiceTestService.GetEArchiveIncomingInvoiceResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\NetInvoiceTestService\RezaB.NetInvoice.NetInvoiceTestService.GetEArchiveInvoiceResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\NetInvoiceTestService\RezaB.NetInvoice.NetInvoiceTestService.GetEArchiveInvoicesByDateResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\NetInvoiceTestService\RezaB.NetInvoice.NetInvoiceTestService.GetEArchiveInvoicesByReportNoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\NetInvoiceTestService\RezaB.NetInvoice.NetInvoiceTestService.GetEArchiveInvoicesWithDateResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\NetInvoiceTestService\RezaB.NetInvoice.NetInvoiceTestService.GetEArchiveInvoicesWithIssueDateAndTaxNumberResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\NetInvoiceTestService\RezaB.NetInvoice.NetInvoiceTestService.GetEArchiveReportListResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\NetInvoiceTestService\RezaB.NetInvoice.NetInvoiceTestService.GetEArchiveReportResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\NetInvoiceTestService\RezaB.NetInvoice.NetInvoiceTestService.GetEInvoiceCustomerFullListResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\NetInvoiceTestService\RezaB.NetInvoice.NetInvoiceTestService.GetEInvoiceCustomerListByDateResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\NetInvoiceTestService\RezaB.NetInvoice.NetInvoiceTestService.GetEInvoiceReceiverListUpdatesResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\NetInvoiceTestService\RezaB.NetInvoice.NetInvoiceTestService.GetEInvoiceSenderListUpdatesResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\NetInvoiceTestService\RezaB.NetInvoice.NetInvoiceTestService.GetFormsAuthenticationTicketResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\NetInvoiceTestService\RezaB.NetInvoice.NetInvoiceTestService.GetGTBRefAndRegisterNumberResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\NetInvoiceTestService\RezaB.NetInvoice.NetInvoiceTestService.GetHashOfInvoiceResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\NetInvoiceTestService\RezaB.NetInvoice.NetInvoiceTestService.GetHashOfInvoiceResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\NetInvoiceTestService\RezaB.NetInvoice.NetInvoiceTestService.GetInboundInvoiceByMapCodeResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\NetInvoiceTestService\RezaB.NetInvoice.NetInvoiceTestService.GetIncomingInvoicesByIssueDateResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\NetInvoiceTestService\RezaB.NetInvoice.NetInvoiceTestService.GetInvoiceAllDirectionResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\NetInvoiceTestService\RezaB.NetInvoice.NetInvoiceTestService.GetInvoiceByInvoiceIDResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\NetInvoiceTestService\RezaB.NetInvoice.NetInvoiceTestService.GetInvoiceCountWithDateResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\NetInvoiceTestService\RezaB.NetInvoice.NetInvoiceTestService.GetInvoiceHTMLResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\NetInvoiceTestService\RezaB.NetInvoice.NetInvoiceTestService.GetInvoiceImageResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\NetInvoiceTestService\RezaB.NetInvoice.NetInvoiceTestService.GetInvoicePDFByInvoiceIdResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\NetInvoiceTestService\RezaB.NetInvoice.NetInvoiceTestService.GetInvoicePDFByInvoiceIdWithoutDirectionResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\NetInvoiceTestService\RezaB.NetInvoice.NetInvoiceTestService.GetInvoicePDFResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\NetInvoiceTestService\RezaB.NetInvoice.NetInvoiceTestService.GetInvoiceResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\NetInvoiceTestService\RezaB.NetInvoice.NetInvoiceTestService.GetInvoiceSummaryResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\NetInvoiceTestService\RezaB.NetInvoice.NetInvoiceTestService.GetInvoiceSummaryWithDateResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\NetInvoiceTestService\RezaB.NetInvoice.NetInvoiceTestService.GetInvoiceTemplateResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\NetInvoiceTestService\RezaB.NetInvoice.NetInvoiceTestService.GetInvoiceWithOutFlagResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\NetInvoiceTestService\RezaB.NetInvoice.NetInvoiceTestService.GetInvoiceXMLResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\NetInvoiceTestService\RezaB.NetInvoice.NetInvoiceTestService.GetInvoiceXMLWithOutFlagResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\NetInvoiceTestService\RezaB.NetInvoice.NetInvoiceTestService.GetNewInvoiceIdResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\NetInvoiceTestService\RezaB.NetInvoice.NetInvoiceTestService.GetReconciliationEArchiveByDateExtendedResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\NetInvoiceTestService\RezaB.NetInvoice.NetInvoiceTestService.GetReconciliationEArchiveByDateResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\NetInvoiceTestService\RezaB.NetInvoice.NetInvoiceTestService.GetTaxIdListbyDateResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\NetInvoiceTestService\RezaB.NetInvoice.NetInvoiceTestService.GibStatusResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\NetInvoiceTestService\RezaB.NetInvoice.NetInvoiceTestService.GTBRefAndRegNoResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\NetInvoiceTestService\RezaB.NetInvoice.NetInvoiceTestService.InvoiceCountResultWithDate.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\NetInvoiceTestService\RezaB.NetInvoice.NetInvoiceTestService.InvoiceIdResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\NetInvoiceTestService\RezaB.NetInvoice.NetInvoiceTestService.InvoiceInfoResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\NetInvoiceTestService\RezaB.NetInvoice.NetInvoiceTestService.InvoicePackResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\NetInvoiceTestService\RezaB.NetInvoice.NetInvoiceTestService.InvoiceStateResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\NetInvoiceTestService\RezaB.NetInvoice.NetInvoiceTestService.InvoiceSummaryResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\NetInvoiceTestService\RezaB.NetInvoice.NetInvoiceTestService.LogServerStatusResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\NetInvoiceTestService\RezaB.NetInvoice.NetInvoiceTestService.ProcessDataWithCodeResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\NetInvoiceTestService\RezaB.NetInvoice.NetInvoiceTestService.RejectInvoiceResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\NetInvoiceTestService\RezaB.NetInvoice.NetInvoiceTestService.RejectInvoiceWithNotifyResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\NetInvoiceTestService\RezaB.NetInvoice.NetInvoiceTestService.ReSendInvoiceDataResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\NetInvoiceTestService\RezaB.NetInvoice.NetInvoiceTestService.ReSendInvoiceResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\NetInvoiceTestService\RezaB.NetInvoice.NetInvoiceTestService.ResponseResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\NetInvoiceTestService\RezaB.NetInvoice.NetInvoiceTestService.SendApplicationResponseResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\NetInvoiceTestService\RezaB.NetInvoice.NetInvoiceTestService.SendBase64StringEArchiveDataResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\NetInvoiceTestService\RezaB.NetInvoice.NetInvoiceTestService.SendBase64StringEArchiveDataWithTemplateCodeResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\NetInvoiceTestService\RezaB.NetInvoice.NetInvoiceTestService.SendBase64StringInvoiceResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\NetInvoiceTestService\RezaB.NetInvoice.NetInvoiceTestService.SendBase64StringInvoiceWithTemplateCodeResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\NetInvoiceTestService\RezaB.NetInvoice.NetInvoiceTestService.SendCumulativeInvoiceDataResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\NetInvoiceTestService\RezaB.NetInvoice.NetInvoiceTestService.SendEArchiveDataResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\NetInvoiceTestService\RezaB.NetInvoice.NetInvoiceTestService.SendEArchiveDataWithTemplateCodeResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\NetInvoiceTestService\RezaB.NetInvoice.NetInvoiceTestService.SendEMailResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\NetInvoiceTestService\RezaB.NetInvoice.NetInvoiceTestService.SendInvoiceAsEmailResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\NetInvoiceTestService\RezaB.NetInvoice.NetInvoiceTestService.SendInvoiceDataResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\NetInvoiceTestService\RezaB.NetInvoice.NetInvoiceTestService.SendInvoiceDataWithTemplateCodeResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\NetInvoiceTestService\RezaB.NetInvoice.NetInvoiceTestService.SendMailQueueAgainResponseResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\NetInvoiceTestService\RezaB.NetInvoice.NetInvoiceTestService.SendUBLInvoiceResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\NetInvoiceTestService\RezaB.NetInvoice.NetInvoiceTestService.SendXmlInvoiceResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\NetInvoiceTestService\RezaB.NetInvoice.NetInvoiceTestService.ServerStatusResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\NetInvoiceTestService\RezaB.NetInvoice.NetInvoiceTestService.UploadFromArchiveEnvelopeIncomingResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\NetInvoiceTestService\RezaB.NetInvoice.NetInvoiceTestService.UploadFromArchiveEnvelopeOutgoingResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\NetInvoiceTestService\RezaB.NetInvoice.NetInvoiceTestService.UploadFromArchiveIncomingResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\NetInvoiceTestService\RezaB.NetInvoice.NetInvoiceTestService.UploadFromArchiveOutgoingResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\NetInvoiceTestService\RezaB.NetInvoice.NetInvoiceTestService.UploadFromArchiveUBLIncomingResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\NetInvoiceTestService\RezaB.NetInvoice.NetInvoiceTestService.UploadFromArchiveUBLOutgoingResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\NetInvoiceTestService\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\NetInvoiceTestService\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\NetInvoiceTestService\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\NetInvoiceTestService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
